@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary_blue: '#72ACC5',
+                primary_grey: '#4E5558',
+                primary_black: '222222',
+              }
+            }
+          }
+        }
+      </script>
 </head>
 <body>
-    Hello world
+    <header class="flex justify-between py-4 px-8 items-center fixed w-full bg-transparent">
+        <img src="img/logo.png" alt="" class="h-8">
+        <div class="flex gap-16">
+            <a href="">Docs</a>
+            <a href="">Éditeur d'image</a>
+            <a href="">Contact</a>
+        </div>
+    </header>
+    <main class="">
+        <div class="bg-home w-full">
+            <div class="mt-0 text-transparent">d</div>
+            <img src="img/logo.svg" alt="" class="h-28 m-auto mt-28">
+            <div class="mt-28 w-[35%] ml-[10%] text-center">
+                <p>Explorez le potentiel infini de vos images avec CropXtender, une librairie JavaScript de traitement d'images propulsée par l'intelligence artificielle</p><br>
+                <p>Libérez votre créativité et transformez chaque instant capturé en une œuvre d'art visuelle.</p>
+                <a href="" class="btn mt-16">Commencer</a>
+            </div>
+        </div>
+        <div class="p-14">
+            <p class="text-center font-bold mb-14">NOS FONCTIONNALITÉS</p>
+            <div class="grid grid-cols-3 gap-8 w-[70%] m-auto">
+                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
+                    <p class="text-center mb-2">Recadrage</p>
+                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                </div>
+                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
+                    <p class="text-center mb-2">Recadrage</p>
+                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                </div>
+                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
+                    <p class="text-center mb-2">Recadrage</p>
+                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                </div>
+                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
+                    <p class="text-center mb-2">Recadrage</p>
+                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                </div>
+                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
+                    <p class="text-center mb-2">Recadrage</p>
+                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                </div>
+                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
+                    <p class="text-center mb-2">Recadrage</p>
+                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
