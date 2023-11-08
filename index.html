@@ -8,69 +8,90 @@
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
     rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                primary_blue: '#72ACC5',
-                primary_grey: '#4E5558',
-                primary_black: '222222',
-              }
-            }
-          }
-        }
-      </script>
 </head>
 <body>
-    <header class="flex justify-between py-4 px-8 items-center fixed w-full bg-transparent">
-        <img src="img/logo.png" alt="" class="h-8">
-        <div class="flex gap-16">
+    <header class="flex justify-between py-6 px-16 max-sm:p-4 items-center fixed w-full bg-transparent">
+        <a href="index.html"><img src="img/logo.png" alt="" class="h-8 max-md:h-6"></a>
+        <div class="flex gap-16 max-md:gap-8 max-sm:hidden">
             <a href="">Docs</a>
             <a href="">Éditeur d'image</a>
             <a href="">Contact</a>
         </div>
+        <img src="img/ic-menu.svg" alt="" class="max-sm:block hidden w-[25px] cursor-pointer">
+        
     </header>
     <main class="">
-        <div class="bg-home w-full">
+        <div class="bg-home w-full max-sm:min-h-[550px]">
             <div class="mt-0 text-transparent">d</div>
-            <img src="img/logo.svg" alt="" class="h-28 m-auto mt-28">
-            <div class="mt-28 w-[35%] ml-[10%] text-center">
+            <img src="img/logo.svg" alt="" class="h-28 max-md:h-20 max-sm:h-14 m-auto max-md:mt-20 mt-28">
+            <div class="max-sm:mt-12 max-lg:mt-20 mt-28 max-sm:w-auto max-md:w-[50%] max-lg:w-[45%] w-[35%] max-lg:ml-16 ml-[10%] max-sm:mx-4 text-center ">
                 <p>Explorez le potentiel infini de vos images avec CropXtender, une librairie JavaScript de traitement d'images propulsée par l'intelligence artificielle</p><br>
                 <p>Libérez votre créativité et transformez chaque instant capturé en une œuvre d'art visuelle.</p>
-                <a href="" class="btn mt-16">Commencer</a>
+                <a href="" class="btn m-auto mt-8">Commencer</a>
             </div>
         </div>
-        <div class="p-14">
+        <div class="py-14">
             <p class="text-center font-bold mb-14">NOS FONCTIONNALITÉS</p>
-            <div class="grid grid-cols-3 gap-8 w-[70%] m-auto">
-                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
-                    <p class="text-center mb-2">Recadrage</p>
-                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+            <div class="grid grid-cols-3 max-lg:grid-cols-2  max-sm:grid-cols-1 gap-8 w-[800px] max-lg:w-[550px] max-sm:w-full m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
+                    <div id="card-front" class="flex items-center justify-center flex-col">
+                        <p class="text-center mt-2 mb-6">Recadrage</p>
+                        <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                    </div>
+                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
+                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    </div>
                 </div>
-                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
-                    <p class="text-center mb-2">Recadrage</p>
-                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
+                    <div id="card-front" class="flex items-center justify-center flex-col">
+                        <p class="text-center mt-2 mb-6">Rotation</p>
+                        <img src="img/ic-rotation.svg" alt="" class="m-auto">
+                    </div>
+                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
+                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    </div>
                 </div>
-                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
-                    <p class="text-center mb-2">Recadrage</p>
-                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
+                    <div id="card-front" class="flex items-center justify-center flex-col">
+                        <p class="text-center mt-2 mb-6">Retournement</p>
+                        <img src="img/ic-retournement.svg" alt="" class="m-auto">
+                    </div>
+                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
+                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    </div>
                 </div>
-                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
-                    <p class="text-center mb-2">Recadrage</p>
-                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
+                    <div id="card-front" class="flex items-center justify-center flex-col">
+                        <p class="text-center mt-2 mb-6">Zoom</p>
+                        <img src="img/ic-zoom.svg" alt="" class="m-auto">
+                    </div>
+                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
+                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    </div>
                 </div>
-                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
-                    <p class="text-center mb-2">Recadrage</p>
-                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
+                    <div id="card-front" class="flex items-center justify-center flex-col">
+                        <p class="text-center mb-2">Génération d’image <br> avec de l’IA</p>
+                        <img src="img/ic-generation.svg" alt="" class="m-auto">
+                    </div>
+                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
+                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    </div>
                 </div>
-                <div class="bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[150px]">
-                    <p class="text-center mb-2">Recadrage</p>
-                    <img src="img/ic-recradrage.svg" alt="" class="m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
+                    <div id="card-front" class="flex items-center justify-center flex-col">
+                        <p class="text-center mt-2 mb-6">Filtres et effets photo</p>
+                        <img src="img/ic-filtre.svg" alt="" class="m-auto">
+                    </div>
+                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
+                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
 </body>
 </html>

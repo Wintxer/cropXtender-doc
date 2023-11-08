@@ -6,7 +6,13 @@ body {
 
 header {
     background-color: #4E5558;
+    transition: background-color 0.3s ease;
 }
+
+header.scrolled {
+    background-color: #222222; /* Remplacez cela par la couleur de fond souhaitée */
+    box-shadow: #000000 10px 0px 20px;
+  }
 
 header a:hover {
     color: #72ACC5;
@@ -15,11 +21,35 @@ header a:hover {
 .bg-home {
     background: url("img/bg.png") no-repeat;
     background-size: 100%;
-    height: 100vh;
+    background-position: bottom;
+    height: 50vw;
+    min-height: 700px;
+}
+
+@media (max-width: 1280px) {
+    .bg-home {
+        background-size: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bg-home {
+        background-size: auto;
+        background-position: 30% bottom;
+    }
+}
+
+@media (max-width: 640px) {
+    .bg-home {
+        background-size: auto;
+        background-position: left bottom;
+    }
 }
 
 .btn {
     background-color: #72ACC5;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
+    display: block;
+    width: fit-content;
 }
