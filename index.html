@@ -10,88 +10,183 @@
     rel="stylesheet">
 </head>
 <body>
-    <header class="flex justify-between py-6 px-16 max-sm:p-4 items-center fixed w-full bg-transparent">
-        <a href="index.html"><img src="img/logo.png" alt="" class="h-8 max-md:h-6"></a>
-        <div class="flex gap-16 max-md:gap-8 max-sm:hidden">
-            <a href="">Docs</a>
-            <a href="">Éditeur d'image</a>
-            <a href="">Contact</a>
+    <header class="flex justify-between py-6 px-16 max-md:px-10 max-sm:p-4 items-center fixed w-full bg-transparent">
+        <div class="flex items-center justify-between w-full self-start z-10">
+            <a href="index.html"><img src="img/logo.png" alt="" class="h-8 max-md:h-6"></a>
+            <div class="flex gap-16 max-lg:gap-8 max-md:gap-4 max-sm:hidden">
+                <a href="">Docs</a>
+                <a href="">Éditeur d'image</a>
+                <a href="https://github.com/Wintxer/cropXtender-doc/tree/main">Github</a>
+                <a href="">Contact</a>
+            </div>
+            <button class="burger-menu-icon max-sm:block hidden" data-ic-class="button-trigger">
+                <span class="burger-menu-button"></span>
+            </button>
         </div>
-        <img src="img/ic-menu.svg" alt="" class="max-sm:block hidden w-[25px] cursor-pointer">
         
+        <div class="burger-menu flex items-center justify-center flex-col p-8 pt-20 fixed">
+            <a href="" class="block pb-4">Docs</a>
+            <a href="" class="block pb-4">Éditeur d'image</a>
+            <a href="https://github.com/Wintxer/cropXtender-doc/tree/main" target="_blank" class="block pb-4">Github</a>
+            <a href="" class="block">Contact</a>
+        </div>
     </header>
+
     <main class="">
         <div class="bg-home w-full max-sm:min-h-[550px]">
             <div class="mt-0 text-transparent">d</div>
             <img src="img/logo.svg" alt="" class="h-28 max-md:h-20 max-sm:h-14 m-auto max-md:mt-20 mt-28">
             <div class="max-sm:mt-12 max-lg:mt-20 mt-28 max-sm:w-auto max-md:w-[50%] max-lg:w-[45%] w-[35%] max-lg:ml-16 ml-[10%] max-sm:mx-4 text-center ">
-                <p>Explorez le potentiel infini de vos images avec CropXtender, une librairie JavaScript de traitement d'images propulsée par l'intelligence artificielle</p><br>
+                <p>Explorez le potentiel infini de vos images avec CropXtender, une librairie JavaScript de traitement d'images propulsée par l'intelligence artificielle.</p><br>
                 <p>Libérez votre créativité et transformez chaque instant capturé en une œuvre d'art visuelle.</p>
-                <a href="" class="btn m-auto mt-8">Commencer</a>
+
+                <div class="flex justify-center m-auto mt-12">
+                    <a href="" class="btn mr-8 bg-[#4E5558]">Documentation</a>
+                    <a href="" class="btn">Essayer</a>
+                </div>
+                
             </div>
         </div>
         <div class="py-14">
             <p class="text-center font-bold mb-14">NOS FONCTIONNALITÉS</p>
-            <div class="grid grid-cols-3 max-lg:grid-cols-2  max-sm:grid-cols-1 gap-8 w-[800px] max-lg:w-[550px] max-sm:w-full m-auto">
-                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
-                    <div id="card-front" class="flex items-center justify-center flex-col">
+            <div class="grid grid-cols-3 max-lg:grid-cols-2  max-sm:grid-cols-1 gap-12 w-[850px] max-lg:w-[550px] max-sm:w-full m-auto">
+                <div class="card bg-primary_grey w-[250px] rounded-tr-md rounded-bl-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer relative">
+                    <div id="card-front" class="flex items-center justify-center flex-col absolute">
                         <p class="text-center mt-2 mb-6">Recadrage</p>
                         <img src="img/ic-recradrage.svg" alt="" class="m-auto">
                     </div>
-                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
-                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    <div id="card-back" class="flex items-center justify-center flex-col opacity absolute p-4 w-full  text-center">
+                        <img src="img/ic-info.svg" alt="" class="m-auto h-6 mb-1">
+                        <p>Redéfinissez vos images avec un recadrage personnalisé ou parmi une variété de format.</p>
                     </div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -left-[2px] -top-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -left-[2px] -top-[2px]"></div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -right-[2px] -bottom-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -right-[2px] -bottom-[2px]"></div>
                 </div>
-                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
-                    <div id="card-front" class="flex items-center justify-center flex-col">
+                <div class="card bg-primary_grey w-[250px] rounded-tr-md rounded-bl-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer relative">
+                    <div id="card-front" class="flex items-center justify-center flex-col absolute">
                         <p class="text-center mt-2 mb-6">Rotation</p>
                         <img src="img/ic-rotation.svg" alt="" class="m-auto">
                     </div>
-                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
-                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    <div id="card-back" class="flex items-center justify-center flex-col opacity absolute p-4 w-full  text-center">
+                        <img src="img/ic-info.svg" alt="" class="m-auto h-6 mb-1">
+                        <p>Explorez de nouveaux angles et perspectives en pivotant vos images.</p>
                     </div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -left-[2px] -top-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -left-[2px] -top-[2px]"></div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -right-[2px] -bottom-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -right-[2px] -bottom-[2px]"></div>
                 </div>
-                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
-                    <div id="card-front" class="flex items-center justify-center flex-col">
+                <div class="card bg-primary_grey w-[250px] rounded-tr-md rounded-bl-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer relative">
+                    <div id="card-front" class="flex items-center justify-center flex-col absolute">
                         <p class="text-center mt-2 mb-6">Retournement</p>
                         <img src="img/ic-retournement.svg" alt="" class="m-auto">
                     </div>
-                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
-                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    <div id="card-back" class="flex items-center justify-center flex-col opacity absolute p-4 w-full  text-center">
+                        <img src="img/ic-info.svg" alt="" class="m-auto h-6 mb-1">
+                        <p>Retournez vos images verticalement et/ou horizontalement.</p>
                     </div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -left-[2px] -top-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -left-[2px] -top-[2px]"></div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -right-[2px] -bottom-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -right-[2px] -bottom-[2px]"></div>
                 </div>
-                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
-                    <div id="card-front" class="flex items-center justify-center flex-col">
+                <div class="card bg-primary_grey w-[250px] rounded-tr-md rounded-bl-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer relative">
+                    <div id="card-front" class="flex items-center justify-center flex-col absolute">
                         <p class="text-center mt-2 mb-6">Zoom</p>
                         <img src="img/ic-zoom.svg" alt="" class="m-auto">
                     </div>
-                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
-                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    <div id="card-back" class="flex items-center justify-center flex-col opacity absolute p-4 w-full  text-center">
+                        <img src="img/ic-info.svg" alt="" class="m-auto h-6 mb-1">
+                        <p>Explorez les détails les plus subtils de vos photos avec un zoom fluide.</p>
                     </div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -left-[2px] -top-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -left-[2px] -top-[2px]"></div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -right-[2px] -bottom-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -right-[2px] -bottom-[2px]"></div>
                 </div>
-                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
-                    <div id="card-front" class="flex items-center justify-center flex-col">
+                <div class="card bg-primary_grey w-[250px] rounded-tr-md rounded-bl-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer relative">
+                    <div id="card-front" class="flex items-center justify-center flex-col absolute">
                         <p class="text-center mb-2">Génération d’image <br> avec de l’IA</p>
                         <img src="img/ic-generation.svg" alt="" class="m-auto">
                     </div>
-                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
-                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    <div id="card-back" class="flex items-center justify-center flex-col opacity absolute p-4 w-full  text-center">
+                        <img src="img/ic-info.svg" alt="" class="m-auto h-6 mb-1">
+                        <p>Laissez notre IA générer des décors captivants pour étendre naturellement votre image.</p>
                     </div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -left-[2px] -top-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -left-[2px] -top-[2px]"></div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -right-[2px] -bottom-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -right-[2px] -bottom-[2px]"></div>
                 </div>
-                <div class="card bg-primary_grey w-[250px] rounded-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer">
-                    <div id="card-front" class="flex items-center justify-center flex-col">
+                <div class="card bg-primary_grey w-[250px] rounded-tr-md rounded-bl-md p-4 flex items-center justify-center flex-col min-h-[160px] m-auto cursor-pointer relative">
+                    <div id="card-front" class="flex items-center justify-center flex-col absolute">
                         <p class="text-center mt-2 mb-6">Filtres et effets photo</p>
                         <img src="img/ic-filtre.svg" alt="" class="m-auto">
                     </div>
-                    <div id="card-back" class="flex items-center justify-center flex-col hidden">
-                        Redéfinissez vos images avec un recadrage personnalisé ou choisissez parmi une variété de format.
+                    <div id="card-back" class="flex items-center justify-center flex-col opacity absolute p-4 w-full  text-center">
+                        <img src="img/ic-info.svg" alt="" class="m-auto h-6 mb-1">
+                        <p>Transformez l'ambiance de vos images avec notre collection de filtres artistiques.</p>
                     </div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -left-[2px] -top-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -left-[2px] -top-[2px]"></div>
+
+                    <div class="h-10 bg-white w-0.5 absolute -right-[2px] -bottom-[2px]"></div>
+                    <div class="h-0.5 bg-white w-10 absolute -right-[2px] -bottom-[2px]"></div>
                 </div>
             </div>
         </div>
     </main>
 
+    <footer class="flex flex-col justify-between pt-20 py-6 px-16 max-md:px-10 max-sm:p-4 items-center w-full max-sm:mt-10">
+        <div class="flex justify-between w-full max-sm:flex-col-reverse max-sm:items-center  max-sm:mb-6">
+            <div class="w-fit  max-sm:text-center">
+                <a href="index.html"><img src="img/logo.png" alt="" class="h-12 max-lg:h-8 mb-5 max-lg:mb-4"></a>
+                <p>Innovez visuellement, <br> partagez passionément.
+                </p>
+            </div>
+            <div class="flex flex-col w-[60%] max-sm:w-[100%] items-end max-sm:items-center max-sm:mb-6">
+                <div class="flex w-full justify-between">
+                    <div class="flex w-full max-[900px]:justify-end max-sm:justify-center">
+                        <div class="flex flex-col mr-[20%]">
+                            <a href="" class="mb-4">Docs</a>
+                            <a href="https://github.com/Wintxer/cropXtender-doc/tree/main">Github</a>
+                        </div>
+                        <div class="flex flex-col">
+                            <a href="" class="mb-4">Éditeur d'image</a>
+                            <a href="https://github.com/Wintxer/cropXtender-doc/tree/main">Contact</a>
+                        </div>
+                    </div>
+                    <a href="" class="btn hover:text-white max-[900px]:hidden">Contactez-nous</a>
+                </div>
+                <div class="h-[1px] w-[110%] max-[900px]:w-[80%] bg-white rounded mt-7"></div>
+            </div>
+        </div>
+        <div class="flex justify-center relative w-full max-lg:mt-6 max-md:flex-col-reverse items-center">
+            <p>©2023 CropXtender, All rights reserved</p>
+            <div class="absolute max-md:relative max-md:mb-4 right-0 flex items-end">
+                <a href=""><img src="img/ic-instagram.svg" alt="" class="h-6 mr-4"></a>
+                <a href=""><img src="img/ic-twitter.svg" alt="" class="w-6 mr-4"></a>
+                <a href=""><img src="img/ic-facebook.svg" alt="" class="h-6 mr-4"></a>
+                <a href=""><img src="img/ic-linkedin.svg" alt="" class="w-6"></a>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="app.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/animateAnything.js"></script>
 </body>
 </html>
