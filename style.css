@@ -1,0 +1,384 @@
+:root {
+    --primary-color: #72ACC5;
+    --primary-2-color: #697F88;
+    --text-color: #ffffff;
+    --bg-color: #222222;
+    --gray-color: #4E5558;
+    --gray-2-color: #414648;
+    --gray-3-color: #333739;
+    --bg-code: #333739;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Montserrat';
+}
+
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+header {
+    background-color: var(--gray-color);
+    transition: 0.3s ease;
+    z-index: 100;
+}
+
+header.scrolled {
+    background-color: var(--bg-color);
+    /* Remplacez cela par la couleur de fond souhaitée */
+    box-shadow: #000000 10px 0px 20px;
+}
+
+header.open {
+    height: 250px;
+    background-color: var(--bg-color);
+    box-shadow: #000000 10px 0px 20px;
+}
+
+header a, footer a {
+    transition: 0.2s;
+}
+
+header a:hover, footer a:hover {
+    color: var(--primary-color);
+}
+
+.burger-menu-icon {
+    background: transparent;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.burger-menu-icon.active .burger-menu-button {
+    transition: 0.2s ease;
+    background-color: transparent;
+}
+
+.burger-menu-icon.active .burger-menu-button:before,
+.burger-menu-icon.active .burger-menu-button:after {
+    transition: top 0.3s ease, transform 0.3s 0.2s ease;
+}
+
+.burger-menu-icon.active .burger-menu-button:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.burger-menu-icon.active .burger-menu-button:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.burger-menu-button {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.2s 0.2s;
+}
+
+.burger-menu-button:before,
+.burger-menu-button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: white;
+    transition: top 0.3s 0.2s ease, transform 0.3s ease;
+    border-radius: 10px;
+    transform-origin: 50% 50%;
+}
+
+.burger-menu-button:before {
+    top: -10px;
+    transform: rotate(0deg);
+}
+
+.burger-menu-button:after {
+    top: 10px;
+    transform: rotate(0deg);
+}
+
+.burger-menu {
+    transition: 0.3s ease;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    top: -200px
+}
+
+.burger-menu.open {
+    opacity: 1;
+    top: 0px
+}
+
+
+.bg-home {
+    background: url("img/bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    height: 50vw;
+    min-height: 700px;
+}
+
+.bg-home-animation {
+    background: url("img/bg-animation.png") no-repeat;
+    height: 50vw;
+    min-height: 700px;
+    animation: bg-animation infinite 10s ease;
+}
+
+@keyframes bg-animation {
+    0%{
+        background-size: 150%;
+        background-position: 60% 75%;
+    }
+    20%{
+        background-size: 150%;
+        background-position: 50% 75%;
+    }
+    40%{
+        background-size: 200%;
+        background-position: 50% 75%;
+    }
+    60%{
+        background-size: 200%;
+        background-position: 50% 80%;
+    }
+    80%{
+        background-size: 150%;
+        background-position: 50% 80%;
+    }
+    100%{
+        background-size: 150%;
+        background-position: 60% 75%;
+    }
+}
+
+span.required{
+    color: rgb(192, 0, 0);
+}
+button.btn {
+    background-color: var(--primary-color) !important;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+    transition: 0.2s;
+    height: 44px;
+    min-width: fit-content;
+}
+
+.btn:hover {
+    filter: brightness(90%);
+}
+
+.card {
+    transition: 0.4s;
+}
+
+.card:hover {
+    box-shadow: #151515 5px 5px 10px;
+    transform: translate(-5px, -5px);
+}
+
+#card-front,
+#card-back {
+    transition: 0.2s opacity;
+}
+
+#card-front.opacity,
+#card-back.opacity {
+    opacity: 0;
+}
+
+.doc-code {
+    padding: 15px;
+    padding-right: 30px;
+    background: var(--bg-code);
+    font-family: 'Space Mono', monospace;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+.doc-code .copy-btn {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 10px;
+    right: 10px;
+}
+
+.doc-code .copy-btn img {
+    transition: 0.2s ease;
+    opacity: 0.5;
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+
+.doc-code .copy-btn img:hover {
+    opacity: 1;
+}
+
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+    .bg-home-animation {
+        animation: unset;
+        background-position: top left;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        height: 56px;
+    }
+}
+
+
+.form-container {
+	width: 100vw;
+	height: 100vh;
+	background-color: #7b2cbf;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.upload-files-container {
+	background-color: #f7fff7;
+	width: 420px;
+	padding: 30px 60px;
+	border-radius: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 6px;
+}
+.drag-file-area {
+	border: 2px dashed #7b2cbf;
+	border-radius: 40px;
+	margin: 10px 0 15px;
+	padding: 30px 50px;
+	width: 350px;
+	text-align: center;
+}
+.drag-file-area .upload-icon {
+	font-size: 50px;
+}
+.drag-file-area h3 {
+	font-size: 26px;
+	margin: 15px 0;
+}
+.drag-file-area label {
+	font-size: 19px;
+}
+.drag-file-area label .browse-files-text {
+	color: #7b2cbf;
+	font-weight: bolder;
+	cursor: pointer;
+}
+.browse-files span {
+	position: relative;
+	top: -25px;
+}
+.default-file-input {
+	opacity: 0;
+}
+.cannot-upload-message {
+	background-color: #ffc6c4;
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+	padding: 5px 10px 5px 30px;
+	border-radius: 5px;
+	color: #bb0000;
+	display: none;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.cannot-upload-message span,
+.upload-button-icon {
+	padding-right: 10px;
+}
+.cannot-upload-message span:last-child {
+	padding-left: 20px;
+	cursor: pointer;
+}
+.file-block {
+	color: #f7fff7;
+	background-color: #7b2cbf;
+	transition: all 1s;
+	width: 390px;
+	position: relative;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0 15px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+.file-info {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+.file-icon {
+	margin-right: 10px;
+}
+.file-name,
+.file-size {
+	padding: 0 3px;
+}
+.remove-file-icon {
+	cursor: pointer;
+}
+.progress-bar {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	left: 4.5%;
+	width: 0;
+	height: 5px;
+	border-radius: 25px;
+	background-color: #4bb543;
+}
+.upload-button {
+	font-family: "Montserrat";
+	background-color: #7b2cbf;
+	color: #f7fff7;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	border: none;
+	border-radius: 20px;
+	margin: 10px;
+	padding: 7.5px 50px;
+	cursor: pointer;
+}
