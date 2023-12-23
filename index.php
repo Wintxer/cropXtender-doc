@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
-        rel="stylesheet">
-</head>
+<?php $title='Accueil'; include('head.php') ?>
 
 <body>
-
-    <?php include('header.php') ?>
+    <?php $bgColor = 'transparent'; include('header.php') ?>
 
     <main class="">
         <div class="bg-home w-full max-sm:min-h-[550px]">
@@ -26,7 +15,7 @@
                     <p>Libérez votre créativité et transformez chaque instant capturé en une œuvre d'art visuelle.</p>
                     <div class="flex justify-center m-auto mt-12">
                         <a href="docs.html" class="btn mr-8 bg-[#4E5558]">Documentation</a>
-                        <a href="" class="btn">Essayer</a>
+                        <a href="editor.php" class="btn">Essayer</a>
                     </div>
 
                 </div>
@@ -150,9 +139,7 @@
 
     <?php include('footer.php') ?>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="app.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/animateAnything.js"></script>
+    <?php include('scripts.php') ?>
 </body>
 
 </html>

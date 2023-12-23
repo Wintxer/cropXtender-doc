@@ -9,12 +9,12 @@
             <div class="flex w-full justify-between">
                 <div class="flex w-full max-[900px]:justify-end max-sm:justify-center">
                     <div class="flex flex-col mr-[20%]">
-                        <a href="" class="mb-4">Docs</a>
-                        <a href="https://github.com/Wintxer/cropXtender/tree/main">Github</a>
+                        <a href="docs.php" class="mb-4">Docs</a>
+                        <a href="https://github.com/Wintxer/cropXtender/tree/main" target="_blank">Github</a>
                     </div>
                     <div class="flex flex-col">
-                        <a href="" class="mb-4">Éditeur d'image</a>
-                        <a href="https://github.com/Wintxer/cropXtender/tree/main">Contact</a>
+                        <a href="editor.php" class="mb-4">Éditeur d'image</a>
+                        <a href="contact.php">Contact</a>
                     </div>
                 </div>
                 <a href="contact.php" class="btn hover:text-white max-[900px]:hidden">Contactez-nous</a>

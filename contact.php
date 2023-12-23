@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
-        rel="stylesheet">
-</head>
+<?php $title='Contact'; include('head.php') ?>
 
 <body>
 
@@ -72,10 +62,7 @@
         </div>
     </main>
 
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="app.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/animateAnything.js"></script>
+    <?php include('scripts.php') ?>
 </body>
 
 </html>

@@ -27,14 +27,14 @@ header {
 }
 
 header.scrolled {
-    background-color: var(--bg-color);
+    background-color: var(--gray-color);
     /* Remplacez cela par la couleur de fond souhaitée */
     box-shadow: #000000 10px 0px 20px;
 }
 
 header.open {
     height: 250px;
-    background-color: var(--bg-color);
+    background-color: var(--gray-color);
     box-shadow: #000000 10px 0px 20px;
 }
 
