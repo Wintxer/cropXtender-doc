@@ -104,6 +104,27 @@ docArrow.forEach(arrow => {
 })
 
 // Doc text scroll
+
+let DocMarginTop;
+
+if (window.innerWidth < 640) {
+  DocMarginTop = 140;
+} else if (window.innerWidth < 768) {
+  DocMarginTop = 150
+} else {
+  DocMarginTop = 100;
+}
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 640) {
+    DocMarginTop = 140;
+  } else if (window.innerWidth < 768) {
+    DocMarginTop = 150
+  } else {
+    DocMarginTop = 100;
+  }
+});
+
 const docTextScroll = (link) => {
   link.addEventListener('click', function () {
     const linkId = link.id;
@@ -112,13 +133,14 @@ const docTextScroll = (link) => {
       const linkDocPos = linkDoc.offsetTop;
 
       document.querySelector('.doc-text').scrollTo({
-        top: linkDocPos - 100,
+        top: linkDocPos - DocMarginTop,
         left: linkDocPos.left,
         behavior: "smooth"
       });
     }
   })
 }
+console.log(DocMarginTop);
 
 docLinks.forEach(link => {
 
