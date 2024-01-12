@@ -1,7 +1,7 @@
 <footer class="flex flex-col justify-between pt-20 py-6 px-16 max-md:px-10 max-sm:p-4 items-center w-full max-sm:mt-10">
     <div class="flex justify-between w-full max-sm:flex-col-reverse max-sm:items-center  max-sm:mb-6">
         <div class="w-fit  max-sm:text-center">
-            <a href="index.html"><img src="img/logo.png" alt="" class="h-12 max-lg:h-8 mb-5 max-lg:mb-4"></a>
+            <a href="index.php"><img src="img/logo.png" alt="" class="h-12 max-lg:h-8 mb-5 max-lg:mb-4"></a>
             <p>Innovez visuellement, <br> partagez passionément.
             </p>
         </div>
