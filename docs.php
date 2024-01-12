@@ -51,8 +51,8 @@ include('head.php') ?>
                         <p class="mb-1">● Rotation</p>
                         <p class="mb-1">● Retournement</p>
                         <p class="mb-1">● Zoom</p>
-                        <p class="mb-1">● Génération d'image avec l'IA</p>
                         <p class="mb-1">● Filtres et effets photo</p>
+                        <p class="mb-1">● Génération d'image avec l'IA (WIP)</p>
                     </div>
 
                     <div>
@@ -61,13 +61,22 @@ include('head.php') ?>
                         <?php
                         $symbol = false;
                         $text = 'src/ <br>
-                                └── cropxtender.js <br><br>
-                                exemples/ <br>
-                                ├── cropxtender.js <br>
-                                ├── image.jpg <br>
-                                ├── index.html <br>
-                                └── test.html <br>
-                                ';
+└── cropxtender.js <br><br>
+examples/ <br>
+├── example-basic/
+    ├── cropxtender.js <br>
+    ├── image.jpg <br>
+    ├── index.html <br>
+    ├── style.css <br>
+    └── img/ <br>
+└── example-editor/
+    ├── cropxtender.js <br>
+    ├── image.jpg <br>
+    ├── index.html <br>
+    ├── style.css <br>
+    ├── tailwind.js <br>
+    └── img/ <br>
+';
                         include('components/code.php') ?>
                     </div>
 
@@ -86,7 +95,7 @@ include('head.php') ?>
                         <?php
                         $symbol = false;
                         $text = '&lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt; <br>
-                         &lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt;';
+&lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt;';
                         include('components/code.php') ?>
 
                         <?php $title = false;
@@ -96,7 +105,7 @@ include('head.php') ?>
                         <p class="pt-4 pb-2">Syntaxe</p>
                         <?php
                         $symbol = false;
-                        $text = '$("input").cropxtender([options])';
+                        $text = '$("input").cropxtender({options})';
                         include('components/code.php') ?>
 
                         <ul class="mt-4">
@@ -119,78 +128,74 @@ include('head.php') ?>
                         <?php
                         $symbol = false;
                         $text = '
-                        &lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt; <br>
-                        &lt;script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"&gt;&lt;/script&gt; <br><br> 
-                        &lt;script&gt;<br> 
-                        $("document").ready(function(){ <br>
-                            &nbsp;$("#cropxtender-input").cropxtender({ <br>
-                                &nbsp;&nbsp;&nbsp;maxSize: { width: null, height: null },<br>
-                                &nbsp;&nbsp;&nbsp;minSize: { width: null, height: null },<br>
-                                &nbsp;&nbsp;&nbsp;saveButtonText: "Oui",<br>
-                                &nbsp;&nbsp;&nbsp;closeButtonText: "Non",<br>
-                                &nbsp;&nbsp;&nbsp;saveButtonStyle: {<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;"width": "20px",<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
-                                &nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;closeButtonStyle: {<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;"width": "100px",<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
-                                    &nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;croppingAspectRatio: {x: 0.6, y: 1}, <br>
-                                &nbsp;}),<br>
-                                })<br>';
-                        include('components/code.php') ?>
+&lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt; <br>
+&lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt; <br><br> 
+&lt;script&gt;<br> 
+$("document").ready(function(){ <br>
+    &nbsp;$("#cropxtender-input").cropxtender({ <br>
+        &nbsp;&nbsp;&nbsp;maxSize: { width: null, height: null },<br>
+        &nbsp;&nbsp;&nbsp;minSize: { width: null, height: null },<br>
+        &nbsp;&nbsp;&nbsp;saveButtonText: "Oui",<br>
+        &nbsp;&nbsp;&nbsp;closeButtonText: "Non",<br>
+        &nbsp;&nbsp;&nbsp;saveButtonStyle: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"width": "20px",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
+        &nbsp;&nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;&nbsp;closeButtonStyle: {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"width": "20px",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
+            &nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;});<br>
+        });<br>';
+        include('components/code.php') ?>
 
-                    </div>
-                    <div>
-                        <?php $title = 'Options';
+</div>
+<div>
+    
+    <?php $title = 'Options';
                         include('components/doc-text-title.php') ?>
                         <p class="mt-4">Vous pouvez définir les options de modification avec <code class="bg-bg_code p-1 rounded text-sm">$("input").cropxtender([options])</code>.</p>
+                        
                         <?php $title = false;
-                        $subtitle = 'maxSize';
+                        $subtitle = 'saveFunction';
                         include('components/doc-text-title.php') ?>
-
-                        <p class="mb-2">Limiter le redimensionnement à une hauteur ou une largeur maximale à l'aide des options <code class="bg-bg_code p-1 rounded text-sm">maxHeight</code> et <code class="bg-bg_code p-1 rounded text-sm">maxWidth</code>.</p>
+                        <p class="mb-2">Fonction de sauvegarde personnalisée.</p>
                         <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code></li>
-                            <li class="mb-2">● Défaut : <code class="bg-bg_code p-1 rounded text-sm">Null</code></li>
-                            <li>● Options : <br>
-                                <p class="ml-4 mb-1">• <code class="bg-bg_code p-1 rounded text-sm">maxWidth</code> : largeur maximale</p>
-                                <p class="ml-4">• <code class="bg-bg_code p-1 rounded text-sm">maxHeight</code> : hauteur maximale</p>
-                            </li>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Function</code></li>
+                            <li>● Défaut : remplace l'image de l'input par l'image traitée</li>
+                            <li>● Exemple : <code class="bg-bg_code p-1 rounded text-sm">saveFunction: function (image) {
+                                console.log(image);
+                                }</code></li>
                         </ul>
-
-
+                        
                         <?php $title = false;
-                        $subtitle = 'minSize';
+                        $subtitle = 'closeFunction';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Limiter le redimensionnement à une hauteur ou une largeur minimale à l'aide des options <code class="bg-bg_code p-1 rounded text-sm">minHeight</code> et <code class="bg-bg_code p-1 rounded text-sm">minWidth</code>.</p>
+                        <p class="mb-2">Fonction de fermeture personnalisée.</p>
                         <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code></li>
-                            <li class="mb-2">● Défaut : <code class="bg-bg_code p-1 rounded text-sm">Null</code></li>
-                            <li>● Options : <br>
-                                <p class="ml-4 mb-1">• <code class="bg-bg_code p-1 rounded text-sm">minWidth</code> : largeur minimale</p>
-                                <p class="ml-4">• <code class="bg-bg_code p-1 rounded text-sm">minHeight</code> : hauteur minimale</p>
-                            </li>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Function</code></li>
+                            <li>● Défaut : supprime l'élément cropxtender</li>
+                            <li>● Exemple : <code class="bg-bg_code p-1 rounded text-sm">closeFunction: function () {
+                                console.log("Hello World !");
+                                }</code></li>
                         </ul>
-
 
                         <?php $title = false;
                         $subtitle = 'saveButtonText';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton de sauvegarde.</p>
+                        <p class="mb-2">Définir le texte du bouton de sauvegarde (HTML accepté).</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Oui"</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Valider"</code></li>
                         </ul>
 
                         <?php $title = false;
                         $subtitle = 'closeButtonText';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton de fermeture.</p>
+                        <p class="mb-2">Définir le texte du bouton de fermeture (HTML accepté).</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Non"</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Annuler"</code></li>
                         </ul>
 
                         <?php $title = false;
@@ -221,9 +226,36 @@ include('head.php') ?>
                         </ul>
 
                         <?php $title = false;
+                        $subtitle = 'resize';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Activer le redimensionnement de l'image. Avec le curseur, saisissez la bordure droite ou inférieure et faites-la glisser jusqu'à la largeur ou la hauteur souhaitée.</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'resizeButtonText';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Définir le texte du bouton de redimensionnement (HTML accepté).</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"resize"</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'cropping';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Activer le recadrage de l'image.</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                        </ul>
+
+                        <?php $title = false;
                         $subtitle = 'croppingAspectRatio';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Conserver le rapport hauteur/largeur existant ou en définir un nouveau pour limiter les proportions lors du redimensionnement. Définisser le <code class="bg-bg_code p-1 rounded text-sm">croppingAspectRatio</code> sur true et, éventuellement, transmettez un nouveau rapport (par exemple <code class="bg-bg_code p-1 rounded text-sm">{x: 0.6, y: 1})</code>.</p>
+                        <p class="mb-2">Conserver le rapport hauteur/largeur existant ou en définir un nouveau pour limiter les proportions lors du redimensionnement (par exemple <code class="bg-bg_code p-1 rounded text-sm">{x: 0.6, y: 1})</code>.</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code></li>
                             <li class="mb-2">● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
@@ -234,22 +266,12 @@ include('head.php') ?>
                         </ul>
 
                         <?php $title = false;
-                        $subtitle = 'resize';
+                        $subtitle = 'croppingButtonText';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Activer le redimensionnement de l'image. Avec le curseur, saisissez la bordure droite ou inférieure et faites-la glisser jusqu'à la largeur ou la hauteur souhaitée.</p>
+                        <p class="mb-2">Définir le texte du bouton de recadrage (HTML accepté).</p>
                         <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
-                        </ul>
-
-
-                        <?php $title = false;
-                        $subtitle = 'cropping';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Activer le recadrage de l'image.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Crop"</code></li>
                         </ul>
 
                         <?php $title = false;
@@ -262,12 +284,48 @@ include('head.php') ?>
                         </ul>
 
                         <?php $title = false;
-                        $subtitle = 'flipping';
+                        $subtitle = 'rotatingButtonText';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Acitver le retournement de l'image.</p>
+                        <p class="mb-2">Définir le texte du bouton de rotation (HTML accepté).</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Rotate"</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'flippingX';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Acitver le retournement de l'image sur l'axe horizontal.</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'flippingXButtonText';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Définir le texte du bouton de retournement sur l'axe horizontal (HTML accepté).</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Flip X"</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'flipping Y';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Acitver le retournement de l'image sur l'axe vertical.</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'flippingYButtonText';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Définir le texte du bouton de retournement sur l'axe vertical (HTML accepté).</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Flip Y"</code></li>
                         </ul>
 
                         <?php $title = false;
@@ -280,6 +338,24 @@ include('head.php') ?>
                         </ul>
 
                         <?php $title = false;
+                        $subtitle = 'zoomingButtonText';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Définir le texte du bouton du zoom (HTML accepté).</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Zoom"</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'defaultZoom';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Mettre une valeur de zoom/dézoom par défaut (min: 1, max: 200).</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Int</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                        </ul>
+
+                        <?php $title = false;
                         $subtitle = 'filtering';
                         include('components/doc-text-title.php') ?>
                         <p class="mb-2">Activer les filtres sur l'image.</p>
@@ -289,63 +365,46 @@ include('head.php') ?>
                         </ul>
 
                         <?php $title = false;
-                        $subtitle = 'iaGenerating';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Activer le Generated Fill sur l'image.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
-                        </ul>
-
-                        <?php $title = false;
-                        $subtitle = 'croppingButtonText';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton de recadrage.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Crop"</code></li>
-                        </ul>
-
-                        <?php $title = false;
-                        $subtitle = 'rotatingButtonText';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton de rotation.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Rotate"</code></li>
-                        </ul>
-
-                        <?php $title = false;
-                        $subtitle = 'flippingButtonText';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton de retournement.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Flip"</code></li>
-                        </ul>
-
-                        <?php $title = false;
-                        $subtitle = 'zoomingButtonText';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton du zoom.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Zoom"</code></li>
-                        </ul>
-
-                        <?php $title = false;
                         $subtitle = 'filteringButtonText';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton des filtres.</p>
+                        <p class="mb-2">Définir le texte du bouton des filtres (HTML accepté).</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Filtres"</code></li>
                         </ul>
 
                         <?php $title = false;
+                        $subtitle = 'defaultFilter';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Mettre une valeur de filtres sur l'image par défaut.</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            <li>● Exemple : 
+                            <?php
+                        $symbol = false;
+                        $text = 'defaultFilter: {
+    brightness: 200,    // (default: 100, min: 0, max: 200)
+    contrast: 200,      // (default: 100, min: 0, max: 200)
+    grayscale: 100,     // (default: 0, min: 0, max: 100)
+    opacity: 50,        // (default: 100, min: 0, max: 100)
+    saturate: 200,      // (default: 100, min: 0, max: 200)
+    sepia: 200          // (default: 100, min: 0, max: 200)
+}
+';
+                        include('components/code.php') ?>
+</li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'iaGenerating';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Activer le Generated Fill sur l'image (WIP).</p>
+
+                        <?php $title = false;
                         $subtitle = 'iaGeneratingButtonText';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le texte du bouton de Generated Fill.</p>
+                        <p class="mb-2">Définir le texte du bouton de Generated Fill (HTML accepté).</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Generated Fill"</code></li>
@@ -354,7 +413,7 @@ include('head.php') ?>
                         <?php $title = false;
                         $subtitle = 'optionButtonStyle';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le style CSS pour les boutons d'actions.</p>
+                        <p class="mb-2">Définir le style CSS pour les boutons d'options.</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Objet</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
@@ -363,29 +422,21 @@ include('head.php') ?>
                         <?php $title = false;
                         $subtitle = 'optionButtonContainerStyle';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Définir le style CSS pour le conteneur des boutons d'actions.</p>
+                        <p class="mb-2">Définir le style CSS pour le conteneur des boutons d'options.</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Objet</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
                         </ul>
 
                         <?php $title = false;
-                        $subtitle = 'saveFunction';
+                        $subtitle = 'optionSliderStyle';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Fonction de sauvegarde personnalisée.</p>
+                        <p class="mb-2">Définir le style CSS pour les sliders des options <code class="bg-bg_code p-1 rounded text-sm">zooming</code> et <code class="bg-bg_code p-1 rounded text-sm">filtering</code>.</p>
                         <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Function</code></li>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String (CSS)</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
                         </ul>
 
-                        <?php $title = false;
-                        $subtitle = 'closeFunction';
-                        include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Fonction de fermeture personnalisée.</p>
-                        <ul>
-                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Function</code></li>
-                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
-                        </ul>
 
                         <?php $title = false;
                         $subtitle = 'jqueryUiImport';
@@ -399,10 +450,19 @@ include('head.php') ?>
                         <?php $title = false;
                         $subtitle = 'cssImport';
                         include('components/doc-text-title.php') ?>
-                        <p class="mb-2">Importation de styles CSS.</p>
+                        <p class="mb-2">Importation du CSS de jQuery UI.</p>
                         <ul>
                             <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
                             <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                        </ul>
+
+                        <?php $title = false;
+                        $subtitle = 'forceDisableCSS';
+                        include('components/doc-text-title.php') ?>
+                        <p class="mb-2">Forcer la désactivation du CSS d'origine.</p>
+                        <ul>
+                            <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code></li>
+                            <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
                         </ul>
                     </div>
 
@@ -411,6 +471,7 @@ include('head.php') ?>
                         include('components/doc-text-title.php') ?>
                         <p class="mb-1">● PNG </p>
                         <p class="mb-1">● JPG/JPEG</p>
+                        <p class="mb-1">● WEBP</p>
                         <p class="mb-1">● GIF</p>
                         <p class="mb-1">● BMP</p>
                     </div>

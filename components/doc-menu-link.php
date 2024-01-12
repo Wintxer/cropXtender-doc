@@ -1,5 +1,5 @@
 <?php
-if ($sublinks) {
+if (isset($sublinks)) {
     echo '
     <div class="flex w-3 hover:bg-gray_2 w-full rounded">
         <div class="doc-arrow min-w-5 cursor-pointer w-5 hover:bg-gray_3 rounded-tl rounded-bl px-1.5 flex">
