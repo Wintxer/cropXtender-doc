@@ -14,7 +14,7 @@
                         traitement d'images propulsée par l'intelligence artificielle.</p><br>
                     <p>Libérez votre créativité et transformez chaque instant capturé en une œuvre d'art visuelle.</p>
                     <div class="flex justify-center m-auto mt-12">
-                        <a href="docs.html" class="btn mr-8 bg-[#4E5558]">Documentation</a>
+                        <a href="docs.php" class="btn mr-8 bg-[#4E5558]">Documentation</a>
                         <a href="editor.php" class="btn">Essayer</a>
                     </div>
 
