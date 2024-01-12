@@ -1,8 +1,42 @@
-<?php $title="Éditeur d'image"; include('head.php') ?>
+<!DOCTYPE html>
+<html lang="fr">
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur d'image</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-editor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+</head>
 
-    <?php include('header.php') ?>
+<body class="overflow-hidden">
+
+    <header class="flex justify-between py-6 px-16 max-md:px-10 max-sm:p-4 items-center fixed w-full bg-gray">
+
+        <div class="flex items-center justify-between w-full self-start z-10">
+            <a href="index.html"><img src="img/logo.png" alt="" class="h-8 max-md:h-6"></a>
+            <div class="flex gap-16 max-lg:gap-8 max-md:gap-6 max-sm:hidden">
+                <a href="docs.html">Docs</a>
+                <a href="editor.html">Éditeur d'image</a>
+                <a href="https://github.com/jstm17/cropXtender" target="_blank">Github</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="burger-menu-icon max-sm:block hidden h-6" data-ic-class="button-trigger">
+                <span class="burger-menu-button"></span>
+            </button>
+        </div>
+
+        <div class="burger-menu flex items-center justify-center flex-col p-8 pt-20 fixed">
+            <a href="docs.html" class="block pb-4">Docs</a>
+            <a href="editor.html" class="block pb-4">Éditeur d'image</a>
+            <a href="https://github.com/jstm17/cropXtender" target="_blank" class="block pb-4">Github</a>
+            <a href="contact.html" class="block">Contact</a>
+        </div>
+    </header>
 
     <main class="flex justify-center items-center h-[100vh]">
         <div id="cropxtender-input-container"
@@ -27,11 +61,19 @@
         </div>
     </main>
 
-    <?php include('scripts.php') ?>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
+    <script src="tailwind.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="cropxtender.js"></script>
     <script>
         $('document').ready(function () {
             const save = (image) => {
-                const downloadLink = $("<a>").attr("href", image).attr("download", "cropxtender_exported_image.png");
+                const downloadLink = $("<a>").attr("href", image).attr("download",
+                    "cropxtender_exported_image.png");
                 $("body").append(downloadLink);
                 downloadLink[0].click();
                 downloadLink.remove();

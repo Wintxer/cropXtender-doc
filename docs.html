@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-editor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="overflow-hidden">
+
+    <header class="flex justify-between py-6 px-16 max-md:px-10 max-sm:p-4 items-center fixed w-full bg-gray">
+
+        <div class="flex items-center justify-between w-full self-start z-10">
+            <a href="index.html"><img src="img/logo.png" alt="" class="h-8 max-md:h-6"></a>
+            <div class="flex gap-16 max-lg:gap-8 max-md:gap-6 max-sm:hidden">
+                <a href="docs.html">Docs</a>
+                <a href="editor.html">Éditeur d'image</a>
+                <a href="https://github.com/jstm17/cropXtender" target="_blank">Github</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="burger-menu-icon max-sm:block hidden h-6" data-ic-class="button-trigger">
+                <span class="burger-menu-button"></span>
+            </button>
+        </div>
+
+        <div class="burger-menu flex items-center justify-center flex-col p-8 pt-20 fixed">
+            <a href="docs.html" class="block pb-4">Docs</a>
+            <a href="editor.html" class="block pb-4">Éditeur d'image</a>
+            <a href="https://github.com/jstm17/cropXtender" target="_blank" class="block pb-4">Github</a>
+            <a href="contact.html" class="block">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-14 sm:pt-[72px] md:pt-20">
+        <div class="flex gap-12">
+
+            <!-- Menu -->
+            <div id="doc-menu"
+                class="flex flex-col border-r border-gray_3 w-fit pt-4 px-4 bg-bg z-10 md:h-[calc(100vh-80px)] sm:h-[calc(100vh-72px)] h-[calc(100vh-56px)] min-w-fit transition max-md:translate-x-[-250px] max-md:absolute">
+
+                <div id="doc-menu-arrow" class="md:hidden p-1 bg-gray rounded w-fit hover:bg-gray_2 cursor-pointer mb-4"
+                    onclick="closeDocMenu()">
+                    <img src="img/ic-menu-arrow.svg" alt="" class="h-6 w-6">
+                </div>
+
+                <div class="overflow-auto max-md:border-t-gray_3 max-md:border-t max-md:pt-2">
+                    <p id="" class="doc-link font-semibold px-7 p-2  hover:bg-gray_2 w-full rounded cursor-pointer">
+                        Fonctionnalités</p>
+                    <p id="" class="doc-link font-semibold px-7 p-2  hover:bg-gray_2 w-full rounded cursor-pointer">
+                        <nobr>Fichiers principaux</nobr>
+                    </p>
+                    <div class="flex w-3 hover:bg-gray_2 w-full rounded">
+                        <div
+                            class="doc-arrow min-w-5 cursor-pointer w-5 hover:bg-gray_3 rounded-tl rounded-bl px-1.5 flex">
+                            <img src="img/ic-arrow.svg" alt="" class="transition">
+                        </div>
+                        <p id="" sublinks class="doc-link w-full font-semibold p-2 pl-2 cursor-pointer">Commencer</p>
+                    </div>
+                    <div class="flex mb-2 hidden">
+                        <div class="h-auto w-0.5 ml-[9px] rounded bg-primary"></div>
+                        <div class="flex flex-col w-full">
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">Installation
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">Utilisation</p>
+                        </div>
+                    </div>
+                    <div class="flex w-3 hover:bg-gray_2 w-full rounded">
+                        <div
+                            class="doc-arrow min-w-5 cursor-pointer w-5 hover:bg-gray_3 rounded-tl rounded-bl px-1.5 flex">
+                            <img src="img/ic-arrow.svg" alt="" class="transition">
+                        </div>
+                        <p id="" sublinks class="doc-link w-full font-semibold p-2 pl-2 cursor-pointer">Options</p>
+                    </div>
+                    <div class="flex mb-2 hidden">
+                        <div class="h-auto w-0.5 ml-[9px] rounded bg-primary"></div>
+                        <div class="flex flex-col w-full">
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">saveFunction
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">closeFunction
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">saveButtonText
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">closeButtonText
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">saveButtonStyle
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                closeButtonStyle</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">modalStyle</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">resize</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                resizeButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">cropping</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                croppingAspectRatio</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                croppingButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">rotating</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                rotatingButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">flippingX</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                flippingXButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">flippingY</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                flippingYButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">zooming</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                zoomingButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">defaultZoom</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">filtering</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                filteringButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">defaultFilter
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">iaGenerating
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                iaGeneratingButtonText</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                optionButtonStyle</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                optionButtonContainerStyle</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">
+                                optionSliderStyle</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">jqueryUiImport
+                            </p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">cssImport</p>
+                            <p id="" class="doc-sublink hover:bg-gray_2 p-2 pl-6 rounded cursor-pointer">forceDisableCSS
+                            </p>
+
+                        </div>
+                    </div>
+                    <p id="" class="doc-link font-semibold px-7 p-2  hover:bg-gray_2 w-full rounded cursor-pointer">
+                        <nobr>Images supportées</nobr>
+                    </p>
+                    <p id="" class="doc-link font-semibold px-7 p-2  hover:bg-gray_2 w-full rounded cursor-pointer">
+                        <nobr>Navigateurs supportés</nobr>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Text -->
+            <div class="w-full">
+                <div id="doc-list-icon"
+                    class="md:hidden p-1 bg-gray rounded w-fit hover:bg-gray_2 cursor-pointer my-4 max-md:ml-10 max-sm:ml-4">
+                    <img src="img/ic-list.svg" alt="" class="h-6 w-6">
+                </div>
+                <div class="doc-text overflow-auto h-[100vh] pr-16 max-md:px-10 max-sm:px-4 pb-32 max-md:border-t max-md:border-t-gray_3"
+                    onclick="closeDocMenu()">
+
+                    <div>
+                        <h1 id="" class="doc-text-title text-xl font-bold mb-1 mt-10">Fonctionnalités</h1>
+                        <div class="h-px w-full bg-primary mb-4 rounded"></div>
+                        <p class="mb-1">Cropxtender permet d'effectuer diverses opérations sur une image, telles que :
+                        </p>
+                        <p class="mb-1">● Recadrage</p>
+                        <p class="mb-1">● Rotation</p>
+                        <p class="mb-1">● Retournement</p>
+                        <p class="mb-1">● Zoom</p>
+                        <p class="mb-1">● Filtres et effets photo</p>
+                        <p class="mb-1">● Génération d'image avec l'IA (WIP)</p>
+                    </div>
+
+                    <div>
+                        <h1 id="" class="doc-text-title text-xl font-bold mb-1 mt-10">Fichiers principaux</h1>
+                        <div class="h-px w-full bg-primary mb-4 rounded"></div>
+                        <div class="doc-code">
+                            <pre><code id="copy-text" class="language-bash">└── cropxtender.js
+examples/
+├── example-basic/
+    ├── cropxtender.js
+    ├── image.jpg
+    ├── index.html
+    ├── style.css
+    └── img/
+└── example-editor/
+    ├── cropxtender.js
+    ├── image.jpg
+    ├── index.html
+    ├── style.css
+    ├── tailwind.js
+    └── img/</code></pre>
+                            <div id="copy-btn" data-target="#copy-text" class="copy-btn">
+                                <img src="img/ic-copy.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div>
+                            <h1 id="" class="doc-text-title text-xl font-bold mb-1 mt-10">Commencer</h1>
+                            <div class="h-px w-full bg-primary mb-4 rounded"></div>
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">Installation</h1>
+
+                            <div class="doc-code">
+                                <code>$ </code>
+                                <pre><code id="copy-text" class="language-js">npm install cropxtender</code></pre>
+                                <div id="copy-btn" data-target="#copy-text" class="copy-btn">
+                                    <img src="img/ic-copy.svg" alt="">
+                                </div>
+                            </div>
+
+                            <p class="pt-4 pb-2">Dans le navigateur:</p>
+
+                            <div class="doc-code">
+                                <pre><code id="copy-text" class="language-js">&lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt;
+&lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt;</code></pre>
+                                <div id="copy-btn" data-target="#copy-text" class="copy-btn">
+                                    <img src="img/ic-copy.svg" alt="">
+                                </div>
+                            </div>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">Utilisation</h1>
+
+                            <p class="pt-4 pb-2">Syntaxe</p>
+
+                            <div class="doc-code">
+                                <pre><code id="copy-text" class="language-js">$("input").cropxtender({options})</code></pre>
+                                <div id="copy-btn" data-target="#copy-text" class="copy-btn">
+                                    <img src="img/ic-copy.svg" alt="">
+                                </div>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li>
+                                    <p class="font-semibold">● input</p>
+                                    <p class="ml-2">L'input cible permettant de choisir une image à traiter.</p>
+                                </li>
+                                <li class="mt-2">
+                                    <p class="font-semibold">● options</p>
+                                    <p class="ml-2">Les options de modification.</p>
+                                </li>
+                            </ul>
+
+                            <p class="pt-6 pb-2">Exemple</p>
+                            <div class="doc-code">
+                                <pre><code id="copy-text" class="language-js">&lt;input type="file" name="image" id="cropxtender-input"&gt;</code></pre>
+                                <div id="copy-btn" data-target="#copy-text" class="copy-btn">
+                                    <img src="img/ic-copy.svg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="doc-code">
+                                <pre><code id="copy-text" class="language-js"> &lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt; 
+&lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt;  
+&lt;script&gt; 
+$("document").ready(function(){ 
+    $("#cropxtender-input").cropxtender({ 
+        saveButtonText: "Oui",
+        closeButtonText: "Non",
+        saveButtonStyle: {
+            "width": "20px",
+            "padding": "2rem",
+        },
+        closeButtonStyle: {
+            "width": "20px",
+            "padding": "2rem",
+        }
+    });
+});</code></pre>
+                                <div id="copy-btn" data-target="#copy-text" class="copy-btn">
+                                    <img src="img/ic-copy.svg" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+
+                            <h1 id="" class="doc-text-title text-xl font-bold mb-1 mt-10">Options</h1>
+                            <div class="h-px w-full bg-primary mb-4 rounded"></div>
+                            <p class="mt-4">Vous pouvez définir les options de modification avec <code
+                                    class="bg-bg_code p-1 rounded text-sm">$("input").cropxtender([options])</code>.</p>
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">saveFunction</h1>
+
+                            <p class="mb-2">Fonction de sauvegarde personnalisée.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Function</code>
+                                </li>
+                                <li>● Défaut : remplace l'image de l'input par l'image traitée</li>
+                                <li>● Exemple : <code class="bg-bg_code p-1 rounded text-sm">saveFunction: function
+                                        (image)
+                                        {
+                                        console.log(image);
+                                        }</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">closeFunction
+                            </h1>
+                            <p class="mb-2">Fonction de fermeture personnalisée.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Function</code>
+                                </li>
+                                <li>● Défaut : supprime l'élément cropxtender</li>
+                                <li>● Exemple : <code class="bg-bg_code p-1 rounded text-sm">closeFunction: function ()
+                                        {
+                                        console.log("Hello World !");
+                                        }</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">saveButtonText
+                            </h1>
+                            <p class="mb-2">Définir le texte du bouton de sauvegarde (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Valider"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">closeButtonText
+                            </h1>
+                            <p class="mb-2">Définir le texte du bouton de fermeture (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Annuler"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">saveButtonStyle
+                            </h1>
+                            <p class="mb-2">Définir le style CSS du bouton de sauvegarde.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">closeButtonStyle
+                            </h1>
+                            <p class="mb-2">Définir le style CSS du bouton de fermeture.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">modalStyle</h1>
+                            <p class="mb-2">Définir le style CSS pour la modal.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">resize</h1>
+                            <p class="mb-2">Activer le redimensionnement de l'image. Avec le curseur, saisissez la
+                                bordure
+                                droite ou inférieure et faites-la glisser jusqu'à la largeur ou la hauteur souhaitée.
+                            </p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">resizeButtonText
+                            </h1>
+                            <p class="mb-2">Définir le texte du bouton de redimensionnement (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"resize"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">cropping</h1>
+                            <p class="mb-2">Activer le recadrage de l'image.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                croppingAspectRatio</h1>
+                            <p class="mb-2">Conserver le rapport hauteur/largeur existant ou en définir un nouveau pour
+                                limiter les proportions lors du redimensionnement (par exemple <code
+                                    class="bg-bg_code p-1 rounded text-sm">{x: 0.6, y: 1})</code>.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code>
+                                </li>
+                                <li class="mb-2">● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code>
+                                </li>
+                                <li>● Options : <br>
+                                    <p class="ml-4 mb-1">• <code class="bg-bg_code p-1 rounded text-sm">x</code> : axe
+                                        horizontale</p>
+                                    <p class="ml-4">• <code class="bg-bg_code p-1 rounded text-sm">y</code> : axe
+                                        verticale
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                croppingButtonText</h1>
+                            <p class="mb-2">Définir le texte du bouton de recadrage (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Crop"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">rotating</h1>
+                            <p class="mb-2">Activer la rotation de l'image.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                rotatingButtonText</h1>
+                            <p class="mb-2">Définir le texte du bouton de rotation (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Rotate"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">flippingX</h1>
+                            <p class="mb-2">Acitver le retournement de l'image sur l'axe horizontal.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                flippingXButtonText</h1>
+                            <p class="mb-2">Définir le texte du bouton de retournement sur l'axe horizontal (HTML
+                                accepté).
+                            </p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Flip X"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">flippingY</h1>
+                            <p class="mb-2">Acitver le retournement de l'image sur l'axe vertical.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                flippingYButtonText</h1>
+                            <p class="mb-2">Définir le texte du bouton de retournement sur l'axe vertical (HTML
+                                accepté).
+                            </p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Flip Y"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">zooming</h1>
+                            <p class="mb-2">Activer le zoom/dézoom sur l'image.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">zoomingButtonText
+                            </h1>
+                            <p class="mb-2">Définir le texte du bouton du zoom (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Zoom"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">defaultZoom</h1>
+                            <p class="mb-2">Mettre une valeur de zoom/dézoom par défaut (min: 1, max: 200).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Int</code></li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">filtering</h1>
+                            <p class="mb-2">Activer les filtres sur l'image.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                filteringButtonText</h1>
+                            <p class="mb-2">Définir le texte du bouton des filtres (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Filtres"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">defaultFilter
+                            </h1>
+                            <p class="mb-2">Mettre une valeur de filtres sur l'image par défaut.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Object</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                                <li>● Exemple :
+                                    <?php
+                        $symbol = false;
+                        $text = 'defaultFilter: {
+    brightness: 200,    // (default: 100, min: 0, max: 200)
+    contrast: 200,      // (default: 100, min: 0, max: 200)
+    grayscale: 100,     // (default: 0, min: 0, max: 100)
+    opacity: 50,        // (default: 100, min: 0, max: 100)
+    saturate: 200,      // (default: 100, min: 0, max: 200)
+    sepia: 200          // (default: 100, min: 0, max: 200)
+}
+';
+                        include('components/code.php') ?>
+                                </li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">iaGenerating</h1>
+                            <p class="mb-2">Activer le Generated Fill sur l'image (WIP).</p>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                iaGeneratingButtonText</h1>
+                            <p class="mb-2">Définir le texte du bouton de Generated Fill (HTML accepté).</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">"Generated Fill"</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">optionButtonStyle
+                            </h1>
+                            <p class="mb-2">Définir le style CSS pour les boutons d'options.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Objet</code></li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">
+                                optionButtonContainerStyle</h1>
+                            <p class="mb-2">Définir le style CSS pour le conteneur des boutons d'options.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Objet</code></li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">optionSliderStyle
+                            </h1>
+                            <p class="mb-2">Définir le style CSS pour les sliders des options <code
+                                    class="bg-bg_code p-1 rounded text-sm">zooming</code> et <code
+                                    class="bg-bg_code p-1 rounded text-sm">filtering</code>.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">String
+                                        (CSS)</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">null</code></li>
+                            </ul>
+
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">jqueryUiImport
+                            </h1>
+                            <p class="mb-2">Importation de jQuery UI.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                            </ul>
+
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">cssImport</h1>
+                            <p class="mb-2">Importation du CSS de jQuery UI.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">true</code></li>
+                            </ul>
+                            <h1 id="" subtitles class="doc-text-title text-lg font-semibold mb-2 mt-8">forceDisableCSS
+                            </h1>
+                            <p class="mb-2">Forcer la désactivation du CSS d'origine.</p>
+                            <ul>
+                                <li class="mb-2">● Type : <code class="bg-bg_code p-1 rounded text-sm">Boolean</code>
+                                </li>
+                                <li>● Défaut : <code class="bg-bg_code p-1 rounded text-sm">false</code></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h1 id="" class="doc-text-title text-xl font-bold mb-1 mt-10">Images supportées</h1>
+                            <div class="h-px w-full bg-primary mb-4 rounded"></div>
+                            <p class="mb-1">● PNG </p>
+                            <p class="mb-1">● JPG/JPEG</p>
+                            <p class="mb-1">● WEBP</p>
+                            <p class="mb-1">● GIF</p>
+                            <p class="mb-1">● BMP</p>
+                        </div>
+
+                        <div>
+                            <h1 id="" class="doc-text-title text-xl font-bold mb-1 mt-10">'Navigateurs supportés</h1>
+                            <div class="h-px w-full bg-primary mb-4 rounded"></div>
+                            <p class="mb-1">● Chrome (dernier) </p>
+                            <p class="mb-1">● Firefox (dernier)</p>
+                            <p class="mb-1">● Safari (dernier)</p>
+                            <p class="mb-1">● Opéra (dernier)</p>
+                            <p class="mb-1">● Bord (dernier)</p>
+                            <p class="mb-1">● Internet Explorer 9+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
+    <script src="tailwind.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="cropxtender.js"></script>
+</body>
+
+</html>

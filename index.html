@@ -1,7 +1,41 @@
-<?php $title='Accueil'; include('head.php') ?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-editor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+</head>
 
 <body>
-    <?php $bgColor = 'transparent'; include('header.php') ?>
+    <header class="flex justify-between py-6 px-16 max-md:px-10 max-sm:p-4 items-center fixed w-full bg-transparent">
+
+        <div class="flex items-center justify-between w-full self-start z-10">
+            <a href="index.html"><img src="img/logo.png" alt="" class="h-8 max-md:h-6"></a>
+            <div class="flex gap-16 max-lg:gap-8 max-md:gap-6 max-sm:hidden">
+                <a href="docs.html">Docs</a>
+                <a href="editor.html">Éditeur d'image</a>
+                <a href="https://github.com/jstm17/cropXtender" target="_blank">Github</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="burger-menu-icon max-sm:block hidden h-6" data-ic-class="button-trigger">
+                <span class="burger-menu-button"></span>
+            </button>
+        </div>
+
+        <div class="burger-menu flex items-center justify-center flex-col p-8 pt-20 fixed">
+            <a href="docs.html" class="block pb-4">Docs</a>
+            <a href="editor.html" class="block pb-4">Éditeur d'image</a>
+            <a href="https://github.com/jstm17/cropXtender" target="_blank" class="block pb-4">Github</a>
+            <a href="contact.html" class="block">Contact</a>
+        </div>
+    </header>
 
     <main class="">
         <div class="bg-home w-full max-sm:min-h-[550px]">
@@ -14,8 +48,8 @@
                         traitement d'images propulsée par l'intelligence artificielle.</p><br>
                     <p>Libérez votre créativité et transformez chaque instant capturé en une œuvre d'art visuelle.</p>
                     <div class="flex justify-center m-auto mt-12">
-                        <a href="docs.php" class="btn mr-8 bg-[#4E5558]">Documentation</a>
-                        <a href="editor.php" class="btn">Essayer</a>
+                        <a href="docs.html" class="btn mr-8 bg-[#4E5558]">Documentation</a>
+                        <a href="editor.html" class="btn">Essayer</a>
                     </div>
 
                 </div>
@@ -137,9 +171,50 @@
         </div>
     </main>
 
-    <?php include('footer.php') ?>
+    <footer
+        class="flex flex-col justify-between pt-20 py-6 px-16 max-md:px-10 max-sm:p-4 items-center w-full max-sm:mt-10">
+        <div class="flex justify-between w-full max-sm:flex-col-reverse max-sm:items-center  max-sm:mb-6">
+            <div class="w-fit  max-sm:text-center">
+                <a href="index.html"><img src="img/logo.png" alt="" class="h-12 max-lg:h-8 mb-5 max-lg:mb-4"></a>
+                <p>Innovez visuellement, <br> partagez passionément.
+                </p>
+            </div>
+            <div class="flex flex-col w-[60%] max-sm:w-[100%] items-end max-sm:items-center max-sm:mb-6">
+                <div class="flex w-full justify-between">
+                    <div class="flex w-full max-[900px]:justify-end max-sm:justify-center">
+                        <div class="flex flex-col mr-[20%]">
+                            <a href="docs.html" class="mb-4">Docs</a>
+                            <a href="https://github.com/Wintxer/cropXtender/tree/main" target="_blank">Github</a>
+                        </div>
+                        <div class="flex flex-col">
+                            <a href="editor.html" class="mb-4">Éditeur d'image</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn hover:text-white max-[900px]:hidden">Contactez-nous</a>
+                </div>
+                <div class="h-[1px] w-[110%] max-[900px]:w-[80%] bg-white rounded mt-7"></div>
+            </div>
+        </div>
+        <div class="flex justify-center relative w-full max-lg:mt-6 max-md:flex-col-reverse items-center">
+            <p>©2023 CropXtender, All rights reserved</p>
+            <div class="absolute max-md:relative max-md:mb-4 right-0 flex items-end">
+                <a href=""><img src="img/ic-instagram.svg" alt="" class="h-6 mr-4"></a>
+                <a href=""><img src="img/ic-twitter.svg" alt="" class="w-6 mr-4"></a>
+                <a href=""><img src="img/ic-facebook.svg" alt="" class="h-6 mr-4"></a>
+                <a href=""><img src="img/ic-linkedin.svg" alt="" class="w-6"></a>
+            </div>
+        </div>
+    </footer>
 
-    <?php include('scripts.php') ?>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="cropxtender.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
