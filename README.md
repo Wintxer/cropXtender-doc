@@ -1,3 +1,5 @@
+<p align='center'> <a href="https://imgbb.com/"><img src="https://cdn.discordapp.com/attachments/890222905089216584/1195383372525080576/Group_22.png?ex=65b3ca85&is=65a15585&hm=3924acafb3007231d671eaecffe97ac841268abcb4d5a27cc752ccaa87445bf1&" alt="logo-eat2gether" border="0"></a></p>
+
 # CropXtender Website
 
 Welcome to the official website repository for CropXtender, a jQuery image cropping plugin.
