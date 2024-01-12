@@ -251,3 +251,20 @@ button.btn {
         height: 56px;
     }
 }
+
+
+pre[class*="language-"] {
+    background: unset;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+code[class*="language-"] {
+    color: white;
+    text-shadow: none;
+}
+
+.token.operator {
+    background: none;
+}

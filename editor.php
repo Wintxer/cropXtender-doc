@@ -5,9 +5,10 @@
     <?php include('header.php') ?>
 
     <main class="flex justify-center items-center h-[100vh]">
-        <div
-            class="border h-[400px] w-10/12 max-w-[800px] border-dashed border-primary_2 relative flex flex-col justify-center items-center rounded-xl">
-            <input type="file" class="opacity-0 absolute inset-x-0  inset-y-0" size="60" placeholder="Oui" id="file" />
+        <div id="cropxtender-input-container"
+            class="h-[400px] w-10/12 max-w-[800px] border border-dashed border-primary_2 relative flex flex-col justify-center items-center rounded-xl">
+            <input type="file" class="opacity-0 absolute inset-x-0  inset-y-0" size="60" placeholder="Oui" name="image"
+                id="cropxtender-input" accept=".png,.jpg,.jpeg" />
             <img src="img/ic-drop-image.svg" alt="">
             <p class="mt-6 mb-5">Déposer l'image ici</p>
             <p class="text-primary_2">PNG, JPG/JPEG, GIF, BMP</p>
@@ -16,13 +17,63 @@
                 <p class="text-xs mx-2">OU</p>
                 <div class="w-20 h-px rounded bg-gray"></div>
             </div>
-            <label class="cursor-pointer btn z-10" for="file">
+            <label class="cursor-pointer btn z-10" for="cropxtender-input">
                 Choisir une image
             </label>
+        </div>
+        <div class="flex flex-col jusitfy-center items-center">
+            <img id="result" src="" alt="">
+            <div id="ctx-finish" class="btn hidden mt-10 cursor-pointer">Recommencer</div>
         </div>
     </main>
 
     <?php include('scripts.php') ?>
+    <script>
+        $('document').ready(function () {
+            const save = (image) => {
+                const downloadLink = $("<a>").attr("href", image).attr("download", "cropxtender_exported_image.png");
+                $("body").append(downloadLink);
+                downloadLink[0].click();
+                downloadLink.remove();
+            }
+
+            $("#cropxtender-input").cropxtender({
+                saveButtonText: '<img attr="Recadrer" src="img/ic-download.svg">',
+                closeButtonText: '<img attr="Recadrer" src="img/ic-trash.svg">',
+                saveButtonStyle: {
+                    "width": "41px",
+                    "padding": "8px",
+                },
+                closeButtonStyle: {
+                    "width": "41px",
+                    "padding": "8px",
+                },
+                forceDisableCSS: true,
+                saveFunction: save,
+                croppingButtonText: '<img attr="Recadrer" src="img/ic-recradrage.svg">',
+                rotatingButtonText: '<img attr="Rotation" src="img/ic-rotation.svg">',
+                flippingXButtonText: '<img attr="Retournement vertical" src="img/ic-retournement-x.svg">',
+                flippingYButtonText: '<img attr="Retournement horizontal" src="img/ic-retournement-y.svg">',
+                zoomingButtonText: '<img attr="Zoom" src="img/ic-zoom.svg">',
+                filteringButtonText: '<img attr="Filtres" src="img/ic-filtre.svg">',
+                iaGeneratingButtonText: '<img attr="IA génération" src="img/ic-generation.svg">',
+                defaultZoom: 100,
+                defaultFilter: {
+                    brightness: 200,
+                    contrast: 200,
+                    grayscale: 100,
+                    opacity: 50,
+                    saturate: 200,
+                    sepia: 200,
+                },
+                rotating: true,
+                flippingX: true,
+                flippingY: true,
+                zooming: true,
+                filtering: true,
+            });
+        });
+    </script>
 </body>
 
 </html>

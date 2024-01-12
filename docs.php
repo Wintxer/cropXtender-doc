@@ -60,6 +60,7 @@ include('head.php') ?>
                         include('components/doc-text-title.php') ?>
                         <?php
                         $symbol = false;
+                        $language = 'bash';
                         $text = 'src/ <br>
 └── cropxtender.js <br><br>
 examples/ <br>
@@ -122,11 +123,13 @@ examples/ <br>
                         <p class="pt-6 pb-2">Exemple</p>
                         <?php
                         $symbol = false;
+                        $language = 'html';
                         $text = '&lt;input type="file" name="image" id="cropxtender-input"&gt;';
                         include('components/code.php') ?> <br>
 
                         <?php
                         $symbol = false;
+                        $language = 'js';
                         $text = '
 &lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt; <br>
 &lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt; <br><br> 
