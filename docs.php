@@ -26,10 +26,10 @@ include('head.php') ?>
                     <?php $link = 'Options';
                     $sublinks = ['maxSize', 'minSize', 'saveButtonText', 'closeButtonText', 'saveButtonStyle', 'closeButtonStyle', 'modalStyle', 'croppingAspectRatio', 'resize', 'cropping', 'rotating', 'flipping', 'zooming', 'filtering', 'iaGenerating', 'croppingButtonText', 'rotatingButtonText', 'flippingButtonText', 'zoomingButtonText', 'filteringButtonText', 'iaGeneratingButtonText', 'optionButtonStyle', 'optionButtonContainerStyle', 'saveFunction', 'closeFunction', 'jqueryUiImport', 'cssImport'];
                     include('components/doc-menu-link.php') ?>
-                    <?php $link = 'Image support';
+                    <?php $link = 'Images supportées';
                     $sublinks = false;
                     include('components/doc-menu-link.php') ?>
-                    <?php $link = 'Browser support';
+                    <?php $link = 'Navigateurs supportés';
                     $sublinks = false;
                     include('components/doc-menu-link.php') ?>
                 </div>
@@ -89,6 +89,7 @@ examples/ <br>
                         include('components/doc-text-title.php') ?>
                         <?php
                         $symbol = true;
+                        $language = 'js';
                         $text = 'npm install cropxtender';
                         include('components/code.php') ?>
 
@@ -100,6 +101,7 @@ examples/ <br>
                         include('components/code.php') ?>
 
                         <?php $title = false;
+                        $language = 'js';
                         $subtitle = 'Utilisation';
                         include('components/doc-text-title.php')
                         ?>
@@ -130,24 +132,23 @@ examples/ <br>
                         <?php
                         $symbol = false;
                         $language = 'js';
-                        $text = '
-&lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt; <br>
-&lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt; <br><br> 
-&lt;script&gt;<br> 
-$("document").ready(function(){ <br>
-    &nbsp;$("#cropxtender-input").cropxtender({ <br>
-        &nbsp;&nbsp;&nbsp;saveButtonText: "Oui",<br>
-        &nbsp;&nbsp;&nbsp;closeButtonText: "Non",<br>
-        &nbsp;&nbsp;&nbsp;saveButtonStyle: {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"width": "20px",<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
-        &nbsp;&nbsp;&nbsp;},<br>
-        &nbsp;&nbsp;&nbsp;closeButtonStyle: {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"width": "20px",<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
-        &nbsp;&nbsp;&nbsp;}<br>
-    &nbsp;});<br>
-});<br>';
+                        $text = '&lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt; 
+&lt;script src="/path/to/cropxtender.js"&gt;&lt;/script&gt;  
+&lt;script&gt; 
+$("document").ready(function(){ 
+    $("#cropxtender-input").cropxtender({ 
+        saveButtonText: "Oui",
+        closeButtonText: "Non",
+        saveButtonStyle: {
+            "width": "20px",
+            "padding": "2rem",
+        },
+        closeButtonStyle: {
+            "width": "20px",
+            "padding": "2rem",
+        }
+    });
+});';
         include('components/code.php') ?>
 
 </div>
@@ -468,7 +469,7 @@ $("document").ready(function(){ <br>
                     </div>
 
                     <div>
-                        <?php $title = 'Image support';
+                        <?php $title = 'Images supportées';
                         include('components/doc-text-title.php') ?>
                         <p class="mb-1">● PNG </p>
                         <p class="mb-1">● JPG/JPEG</p>
@@ -478,7 +479,7 @@ $("document").ready(function(){ <br>
                     </div>
 
                     <div>
-                        <?php $title = 'Browser support';
+                        <?php $title = 'Navigateurs supportés';
                         include('components/doc-text-title.php') ?>
                         <p class="mb-1">● Chrome (dernier) </p>
                         <p class="mb-1">● Firefox (dernier)</p>
