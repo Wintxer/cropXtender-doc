@@ -136,8 +136,6 @@ examples/ <br>
 &lt;script&gt;<br> 
 $("document").ready(function(){ <br>
     &nbsp;$("#cropxtender-input").cropxtender({ <br>
-        &nbsp;&nbsp;&nbsp;maxSize: { width: null, height: null },<br>
-        &nbsp;&nbsp;&nbsp;minSize: { width: null, height: null },<br>
         &nbsp;&nbsp;&nbsp;saveButtonText: "Oui",<br>
         &nbsp;&nbsp;&nbsp;closeButtonText: "Non",<br>
         &nbsp;&nbsp;&nbsp;saveButtonStyle: {<br>
@@ -147,9 +145,9 @@ $("document").ready(function(){ <br>
         &nbsp;&nbsp;&nbsp;closeButtonStyle: {<br>
             &nbsp;&nbsp;&nbsp;&nbsp;"width": "20px",<br>
             &nbsp;&nbsp;&nbsp;&nbsp;"padding": "2rem",<br>
-            &nbsp;&nbsp;&nbsp;}<br>
-            &nbsp;});<br>
-        });<br>';
+        &nbsp;&nbsp;&nbsp;}<br>
+    &nbsp;});<br>
+});<br>';
         include('components/code.php') ?>
 
 </div>
