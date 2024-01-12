@@ -24,7 +24,7 @@ include('head.php') ?>
                     $sublinks = ['Installation', 'Utilisation'];
                     include('components/doc-menu-link.php') ?>
                     <?php $link = 'Options';
-                    $sublinks = ['maxSize', 'minSize', 'saveButtonText', 'closeButtonText', 'saveButtonStyle', 'closeButtonStyle', 'modalStyle', 'croppingAspectRatio', 'resize', 'cropping', 'rotating', 'flipping', 'zooming', 'filtering', 'iaGenerating', 'croppingButtonText', 'rotatingButtonText', 'flippingButtonText', 'zoomingButtonText', 'filteringButtonText', 'iaGeneratingButtonText', 'optionButtonStyle', 'optionButtonContainerStyle', 'saveFunction', 'closeFunction', 'jqueryUiImport', 'cssImport'];
+                    $sublinks = ['saveFunction', 'closeFunction', 'saveButtonText', 'closeButtonText', 'saveButtonStyle', 'closeButtonStyle', 'modalStyle', 'resize', 'resizeButtonText', 'cropping', 'croppingAspectRatio', 'croppingButtonText', 'rotating', 'rotatingButtonText', 'flippingX', 'flippingXButtonText', 'flippingY', 'flippingYButtonText', 'zooming', 'zoomingButtonText', 'defaultZoom', 'filtering', 'filteringButtonText', 'defaultFilter', 'iaGenerating',  'iaGeneratingButtonText', 'optionButtonStyle', 'optionButtonContainerStyle', 'optionSliderStyle', 'jqueryUiImport', 'cssImport', 'forceDisableCSS'];
                     include('components/doc-menu-link.php') ?>
                     <?php $link = 'Images supportées';
                     $sublinks = false;
