@@ -132,7 +132,7 @@ $.fn.cropxtender = function (options) {
   
                 if (!(options && options.cssImport === false)) {
                     $("head").append(`
-                        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+                        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
                     `);
                 }
   
