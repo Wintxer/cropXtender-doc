@@ -14,11 +14,11 @@ CropXtender is a jQuery plugin designed for easy image cropping with additional 
 
 ## Getting Started
 
-Visit the [CropXtender Documentation]([https://cropxtender.com/docs](https://wintxer.github.io/cropXtender-doc/docs.html)) for detailed information on installation, configuration, and usage.
+Visit the [CropXtender Documentation](https://wintxer.github.io/cropXtender-doc/docs.html) for detailed information on installation, configuration, and usage.
 
 ## Demo
 
-Explore the [CropXtender Demo]([https://cropxtender.com/demo](https://wintxer.github.io/cropXtender-doc/editor.html)) to see the plugin in action.
+Explore the [CropXtender Demo](https://wintxer.github.io/cropXtender-doc/editor.html) to see the plugin in action.
 
 ## Installation
 
