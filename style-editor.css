@@ -147,7 +147,7 @@ button:hover {
     position: relative;
     background-color: var(--bg-color);
     max-width: 70%;
-    margin-bottom: 100px;
+    margin: 100px 0px;
 }
 
 #cxt-preview img {
